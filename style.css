@@ -1,191 +1,218 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
 
 body{
-width:100%;
-min-height:100vh;
-overflow-x:hidden;
-font-family:serif;
-background:transparent;
-}
-
-
-.page{
-min-height:100vh;
-position:relative;
-overflow:hidden;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    background:transparent;
+    font-family:serif;
 }
 
 
 /* صفحه اول */
 
-.first-page{
+.cover{
 
-height:100vh;
-background:url("assets/background.jpg") center/cover no-repeat;
+    width:100%;
+    height:100vh;
 
-display:flex;
-flex-direction:column;
-align-items:center;
+    background:url("assets/background.jpg")
+    center/cover no-repeat;
 
-position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 
-padding-top:60px;
+    overflow:hidden;
+
 }
 
 
-.save-date{
-width:260px;
-z-index:2;
+.hero{
+
+    padding-top:50px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    z-index:5;
+
+}
+
+
+.save{
+
+    width:280px;
+
 }
 
 
 .names{
-width:320px;
-margin-top:10px;
-z-index:2;
+
+    width:360px;
+
+    margin-top:15px;
+
 }
 
 
-.tap{
+.hero p{
 
-color:white;
-margin-top:25px;
-font-size:16px;
-letter-spacing:2px;
-z-index:2;
+    margin-top:25px;
+
+    color:white;
+
+    font-size:18px;
+
+    letter-spacing:2px;
 
 }
 
 
 /* پاکت */
 
-.envelope-area{
+.envelope{
 
-position:relative;
+    width:360px;
+    height:260px;
 
-width:330px;
-height:230px;
+    margin-top:60px;
 
-margin-top:70px;
+    position:relative;
 
-cursor:pointer;
+    cursor:pointer;
 
-perspective:1000px;
+    perspective:1000px;
+
+}
+
+
+
+/* کارت داخل */
+
+.card{
+
+    position:absolute;
+
+    width:300px;
+
+    left:30px;
+
+    bottom:25px;
+
+    z-index:1;
+
+
+    transform:translateY(120px);
+
+    opacity:0;
+
+
+    transition:
+    transform 1.8s cubic-bezier(.22,1,.36,1),
+    opacity 1s;
 
 }
 
-
-/* کارت داخل پاکت */
-
-.card-inside{
-
-position:absolute;
-
-width:280px;
-
-left:25px;
-
-bottom:20px;
-
-z-index:1;
-
-transition:1.5s ease;
-
-transform:translateY(80px);
-
-opacity:0;
-
-}
 
 
 /* در پاکت */
 
 .flap{
 
-position:absolute;
+    position:absolute;
 
-width:330px;
+    width:360px;
 
-top:0;
+    left:0;
+    top:0;
 
-left:0;
+    transform-origin:top center;
 
-z-index:3;
+    z-index:3;
 
-transform-origin:top;
 
-transition:1s ease;
+    transition:
+    transform 1.2s ease;
 
 }
+
 
 
 /* جلوی پاکت */
 
 .pocket{
 
-position:absolute;
+    position:absolute;
 
-width:330px;
+    width:360px;
 
-bottom:0;
+    left:0;
 
-left:0;
+    bottom:0;
 
-z-index:4;
-
-}
-
-
-/* حالت باز شدن */
-
-.envelope-area.open .flap{
-
-transform:rotateX(180deg);
+    z-index:4;
 
 }
 
 
-.envelope-area.open .card-inside{
 
-transform:translateY(-80px);
+/* حالت باز */
 
-opacity:1;
+.envelope.open .flap{
 
-}
-
-
-/* کارت بزرگ */
-
-.full-screen-card{
-
-position:fixed;
-
-inset:0;
-
-background:transparent;
-
-display:none;
-
-align-items:center;
-
-justify-content:center;
-
-z-index:20;
+    transform:rotateX(180deg);
 
 }
 
 
-.full-screen-card img{
 
-max-width:95%;
+.envelope.open .card{
 
-max-height:95%;
+    transform:translateY(-90px);
 
-animation:zoom 1s ease;
+    opacity:1;
+
+}
+
+
+
+/* کارت تمام صفحه */
+
+.big-card{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:transparent;
+
+    z-index:20;
+
+}
+
+
+
+.big-card img{
+
+    max-width:95vw;
+
+    max-height:95vh;
+
+
+    animation:zoom .9s ease;
 
 }
 
@@ -195,7 +222,7 @@ animation:zoom 1s ease;
 
 from{
 
-transform:scale(.5);
+transform:scale(.4);
 
 opacity:0;
 
@@ -212,26 +239,28 @@ opacity:1;
 }
 
 
-/* دکمه */
 
-#mapBtn{
+/* مپ */
 
-position:fixed;
+#map{
 
-bottom:30px;
+    display:none;
 
-left:50%;
+    position:fixed;
 
-transform:translateX(-50%);
+    bottom:35px;
 
-padding:12px 25px;
+    left:50%;
 
-border-radius:30px;
+    transform:translateX(-50%);
 
-border:none;
 
-display:none;
+    padding:12px 30px;
 
-z-index:30;
+    border-radius:30px;
+
+    border:0;
+
+    z-index:30;
 
 }
