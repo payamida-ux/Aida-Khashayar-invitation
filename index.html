@@ -4,60 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aida & Khashayar Invitation</title>
+<title>Aida & Khashayar</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<div class="page">
+<div class="cover">
 
-<section class="first-page">
+    <div class="hero">
+        <img src="assets/save_date.png" class="save">
+        <img src="assets/names.png" class="names">
+        <p>Tap the envelope</p>
+    </div>
 
-<img class="save-date" src="assets/save_date.png">
 
-<img class="names" src="assets/names.png">
+    <div class="envelope" id="envelope">
 
-<p class="tap">
-Tap the envelope
-</p>
+        <img src="assets/full_card.png" class="card" id="card">
 
-<div class="envelope-area" id="envelope">
+        <img src="assets/flap.png" class="flap">
 
-<img class="card-inside" 
-src="assets/full_card.png">
+        <img src="assets/pocket.png" class="pocket">
 
-<img class="flap" 
-src="assets/flap.png">
-
-<img class="pocket" 
-src="assets/pocket.png">
+    </div>
 
 </div>
 
-</section>
 
 
-<section class="full-screen-card" id="fullCard">
-
-<img src="assets/full_card.png">
-
-</section>
+<div class="big-card" id="bigCard">
+    <img src="assets/full_card.png">
+</div>
 
 
-<button id="mapBtn">
+
+<button id="map">
 Open Map
 </button>
 
 
 <audio id="music">
-<source src="assets/music.mp3" type="audio/mp3">
+<source src="assets/music.mp3">
 </audio>
-
-
-</div>
 
 
 <script src="script.js"></script>
