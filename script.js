@@ -1,63 +1,49 @@
 const envelope = document.getElementById("envelope");
-const fullCard = document.getElementById("fullCard");
+const card = document.getElementById("card");
+const bigCard = document.getElementById("bigCard");
+const map = document.getElementById("map");
 const music = document.getElementById("music");
-const mapBtn = document.getElementById("mapBtn");
+
 
 let opened = false;
 
 
-/* باز شدن پاکت */
 
-envelope.addEventListener("click", () => {
+envelope.addEventListener("click", function(){
 
-if(!opened){
+    if(!opened){
 
-envelope.classList.add("open");
+        // باز شدن پاکت
+        envelope.classList.add("open");
 
-opened = true;
-
-
-/* موزیک */
-
-music.play().catch(()=>{});
+        opened = true;
 
 
-}
-
-else{
-
-/* بزرگ شدن کارت */
-
-fullCard.style.display="flex";
-
-mapBtn.style.display="block";
-
-}
-
-});
+        // شروع موزیک (اگر فایل وجود داشته باشد)
+        music.play().catch(()=>{});
 
 
+    }else{
 
-/* دکمه مپ */
 
-mapBtn.addEventListener("click",()=>{
+        // نمایش کامل کارت
 
-window.open(
-"https://maps.google.com",
-"_blank"
-);
+        bigCard.style.display="flex";
+
+        map.style.display="block";
+
+
+    }
 
 });
 
 
-/* باز شدن با کیبورد */
 
-envelope.addEventListener("keydown",(e)=>{
+map.addEventListener("click",function(){
 
-if(e.key==="Enter"){
-
-envelope.click();
-
-}
+    window.open(
+    "https://maps.google.com",
+    "_blank"
+    );
 
 });
